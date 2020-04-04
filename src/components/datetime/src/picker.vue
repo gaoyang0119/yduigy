@@ -100,6 +100,10 @@
 
                 let currentValue = _this.currentValue = _this.value.replace(/-/g, '/');
 
+                if(currentValue === ''){
+                    currentValue = this.currentDate()
+                }
+
                 if (_this.startDate && new Date(currentValue).getTime() < new Date(_this.startDate).getTime()) {
                     currentValue = _this.currentValue = _this.startDate;
                 }
@@ -379,6 +383,22 @@
             close() {
                 this.show = false;
                 isIOS && pageScroll.unlock();
+            },
+            currentDate() {
+                let date = new Date()
+                let y = date.getFullYear()
+                let m = date.getMonth() + 1
+                m = m < 10 ? ('0' + m) : m
+                let d = date.getDate()
+                d = d < 10 ? ('0' + d) : d
+                let h = date.getHours()
+                h=h < 10 ? ('0' + h) : h
+                console.log("hhhhhhhh"+h)
+                let minute = date.getMinutes()
+                minute = minute < 10 ? ('0' + minute) : minute
+                let second=date.getSeconds()
+                second=second < 10 ? ('0' + second) : second
+                return y + '/' + m + '/' + d+' '+h+':'+minute
             }
         },
         created() {
