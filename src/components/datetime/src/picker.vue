@@ -103,7 +103,6 @@
                 if(currentValue === ''){
                     currentValue = this.currentDate()
                 }
-
                 if (_this.startDate && new Date(currentValue).getTime() < new Date(_this.startDate).getTime()) {
                     currentValue = _this.currentValue = _this.startDate;
                 }
@@ -393,7 +392,6 @@
                 d = d < 10 ? ('0' + d) : d
                 let h = date.getHours()
                 h=h < 10 ? ('0' + h) : h
-                console.log("hhhhhhhh"+h)
                 let minute = date.getMinutes()
                 minute = minute < 10 ? ('0' + minute) : minute
                 let second=date.getSeconds()

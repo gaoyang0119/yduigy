@@ -116,6 +116,10 @@
                     return /^([0]|[1-9]\d*)?(\.\d*)?$/.test(val);
                 },
                 default: .5
+            },
+            resetdate:{
+                type:Boolean,
+                default:false
             }
         },
         watch: {
@@ -158,6 +162,9 @@
                 document.body.appendChild(this.picker.$el);
 
                 this.picker.$on('pickerConfirm', (value) => {
+                    if(this.resetdate){
+                        return
+                    }
                     if (this.tmpNum > 0 || this.initEmit) {
                         this.currentValue = value;
                         this.$emit('input', value);
