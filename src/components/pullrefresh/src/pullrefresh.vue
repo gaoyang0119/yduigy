@@ -5,7 +5,7 @@
             <div class="yd-pullrefresh-dragtip" ref="dragTip"
                  v-show="touches.isDraging"
                  :class="dragTip.animationTiming"
-                 :style="{ 'transform': 'translate3d(0, ' + dragTip.translate + 'px, 0)' }"
+
             >
                 <span class="yd-pullrefresh-dragtip-icon">
                     <i :class="dragTip.loadingIcon"
